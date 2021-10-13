@@ -1,27 +1,38 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class New {
+export class OperatorsActivity {
     @PrimaryGeneratedColumn()
     id: number
+   
+    @Column()
+    time:string
 
     @Column()
-    title: string
+    activity: string
 
     @Column()
-    subtitle:string
-
-    @Column('text')
-    text: string
+    day: string
 
     @Column()
-    image: string
+    phoneId: string
+
+    @Column()
+    operator: string
+
+    @Column()
+    line: string
+
+    @Column()
+    timeWait: string
+
+    @Column()
+    timeDuration: string
 
     @CreateDateColumn()
     createdAt: Date
 
     @CreateDateColumn()
     updateAt: Date
-
 
 }
