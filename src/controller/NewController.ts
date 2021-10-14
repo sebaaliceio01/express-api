@@ -7,14 +7,14 @@ export class NewController {
 
     static getAll = async (req: Request, res: Response) => {
        
-        const { pageSize = 2, page = 1 } = req.query 
+        const { pageSize = 4, page = 0 } = req.query 
         const newRepo = getRepository(New)
         const news = await newRepo.find({
             order: {
                 title: "ASC",
             },
-            skip: +page,
             take: +pageSize,
+            skip: +page * 4,
         })
         
         if(news.length>0) {
